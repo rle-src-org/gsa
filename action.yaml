@@ -1,0 +1,6 @@
+name: "GSA"
+runs:
+  using: "composite"
+  steps:
+    - run: echo "GSA v3"
+      shell: bash
