@@ -1,4 +1,4 @@
-name: 'GSA V3'
+name: 'GSA V4'
 on: [push]
 jobs:
   testing:
@@ -11,3 +11,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - uses: ./
+      - uses: rle-src-org/gsa@v3.x
+  release:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: release-${{ github.ref }}-${{ github.event_name }}
+    needs:
+      - testing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      #- name: Release this GitHub Action
+      #  uses: rle-src-org/rt@v1

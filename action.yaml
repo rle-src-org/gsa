@@ -2,5 +2,5 @@ name: "GSA"
 runs:
   using: "composite"
   steps:
-    - run: echo "GSA v3"
+    - run: echo "GSA v4"
       shell: bash
